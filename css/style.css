@@ -76,7 +76,7 @@
     html {
         background-color: #E6E6E6;
         color: #444;
-        font: 12px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 12px/1.5 monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     body {
         margin: 10%;
@@ -326,7 +326,7 @@ Copyright (c) 2012 Dan Eden
     }
 
     .slogan {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .ido-code {
