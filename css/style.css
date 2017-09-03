@@ -97,7 +97,7 @@
 
     .content {
         float: left;
-        width: 450px;
+        width: 600px;
     }
     .title {
         font-size: 48px;
@@ -152,6 +152,14 @@
 /*------------------------------------*\
     $TYPOGRAPHY
     \*------------------------------------*/
+
+    @font-face {
+        font-family: 'Sprague';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Sprague'), url('../font/sprague.woff') format('woff');
+    }
+
     p,
     ul, ol, dl,
     .title {
@@ -353,4 +361,10 @@ Copyright (c) 2012 Dan Eden
 
     .ido-code .yellow-mustard {
         color: #e6db74;
+    }
+
+
+    .sprage-font {
+        font-family: 'Sprague';
+        font-size: 35px;
     }
