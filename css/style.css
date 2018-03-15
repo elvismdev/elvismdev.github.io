@@ -368,3 +368,10 @@ Copyright (c) 2012 Dan Eden
         font-family: 'Sprague';
         font-size: 35px;
     }
+
+    .github-widget {
+        border-radius: 4px;
+        -webkit-box-shadow: 0 3px 5px rgba(0,0,0,.3);
+        -moz-box-shadow: rgba(0,0,0,.3) 0 3px 5px;
+        border-color: #a2a2a2\9;
+    }

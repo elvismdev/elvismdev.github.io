@@ -13,51 +13,94 @@
 
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-			<![endif]-->
+			<script src="https://cdn.bootcss.com/html5-history-api/4.2.8/history.min.js"></script>
+		<![endif]-->
 
-			<script>
-				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<!-- GitHub Web Widget -->
+		<script src="https://cdn.bootcss.com/MutationObserver.js/0.3.2/mutationobserver.min.js"></script>
+		<script src="https://cdn.bootcss.com/require.js/2.3.5/require.min.js"></script>
+		<script>
+			require.config({
+				paths:    {
+					jquery:    'https://cdn.bootcss.com/jquery/3.2.1/jquery.min'
+				}
+			});
+			require(['jquery', 'EasyWebApp'],  function ($) {
+				$.ajaxPrefilter('json',  function (option, _, XHR) {
+					if ((new URL( option.url )).hostname  ===  'api.github.com')
+						XHR.setRequestHeader(
+							'Authorization',
+							'token a63b157615abd2ee969763fc438d6249d207ea64'
+							);
+				});
 
-				ga('create', 'UA-69778520-1', 'auto');
-				ga('send', 'pageview');
+				$( document ).ready(function () {
+					$('#EWA_box').iWebApp();
+				});
+			});
+		</script>
 
-			</script>
+		<!-- Google Analitics -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		</head>
+			ga('create', 'UA-69778520-1', 'auto');
+			ga('send', 'pageview');
 
-		<body class="animated bounceInDown">
-			<div class="avatar">
-				<img src="img/avatar-elvis.jpg" alt="Avatar">
-			</div>
+		</script>
 
-			<div class="content">
-				<h1 class="title">Elvis<br>Mørales</h1>
-				<h2 class="slogan"><i>“I don't want it perfect, I want it <span class="sprage-font">AWESOME...</span>”</i></h2>
+	</head>
 
+	<body class="animated bounceInDown">
+		<div class="avatar">
+			<img src="img/avatar-elvis.jpg" alt="Avatar">
+		</div>
+
+		<div class="content">
+			<h1 class="title">Elvis<br>Mørales</h1>
+			<h2 class="slogan"><i>“I don't want it perfect, I want it <span class="sprage-font">AWESOME...</span>”</i></h2>
+
+			<br>
+
+			<p class="ido-code">
+				<code>
+					<span class="white-bone">$iDo</span> <span class="dark-pink">= new</span> <span class="light-blue">WebAndAppDevelopment</span><span class="white-bone">(</span> <span class="yellow-mustard">'PHP'</span><span class="white-bone">,</span> <span class="yellow-mustard">'HTML5'</span><span class="white-bone">,</span> <span class="yellow-mustard">'CSS3'</span><span class="white-bone">,</span> <span class="yellow-mustard">'JavaScript'</span><span class="white-bone">,</span> <span class="yellow-mustard">'jQuery'</span><span class="white-bone">,</span> <span class="yellow-mustard">'AngularJS'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Symfony'</span><span class="white-bone">,</span> <span class="yellow-mustard">'CakePHP'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Laravel'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Linux'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Joomla'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Drupal'</span><span class="white-bone">,</span> <span class="yellow-mustard">'WordPress'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Java'</span><span class="white-bone">,</span> <span class="yellow-mustard">'MySQL'</span><span class="white-bone">,</span> <span class="yellow-mustard">'APIs'</span><span class="white-bone">,</span> <span class="yellow-mustard">'JSON'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Ionic'</span><span class="white-bone">,</span> <span class="yellow-mustard">'AWS'</span><span class="white-bone">,</span> <span class="yellow-mustard">'ReactJS'</span> <span class="white-bone">);</span>
+				</code>
+			</p>
+
+			<div id="github-projects">
+				<div class="github-widget" data-href="Repository.html?repo=elvismdev/woocommerce-products-by-custom-tax"></div>
 				<br>
-
-				<p class="ido-code">
-					<code>
-						<span class="white-bone">$iDo</span> <span class="dark-pink">= new</span> <span class="light-blue">WebAndAppDevelopment</span><span class="white-bone">(</span> <span class="yellow-mustard">'PHP'</span><span class="white-bone">,</span> <span class="yellow-mustard">'HTML5'</span><span class="white-bone">,</span> <span class="yellow-mustard">'CSS3'</span><span class="white-bone">,</span> <span class="yellow-mustard">'JavaScript'</span><span class="white-bone">,</span> <span class="yellow-mustard">'jQuery'</span><span class="white-bone">,</span> <span class="yellow-mustard">'AngularJS'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Symfony'</span><span class="white-bone">,</span> <span class="yellow-mustard">'CakePHP'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Laravel'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Linux'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Joomla'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Drupal'</span><span class="white-bone">,</span> <span class="yellow-mustard">'WordPress'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Java'</span><span class="white-bone">,</span> <span class="yellow-mustard">'MySQL'</span><span class="white-bone">,</span> <span class="yellow-mustard">'APIs'</span><span class="white-bone">,</span> <span class="yellow-mustard">'JSON'</span><span class="white-bone">,</span> <span class="yellow-mustard">'Ionic'</span><span class="white-bone">,</span> <span class="yellow-mustard">'AWS'</span><span class="white-bone">,</span> <span class="yellow-mustard">'ReactJS'</span> <span class="white-bone">);</span>
-					</code>
-				</p>
-
-
-				<ul class="social-icons">
-					<li><a target="_blank" href="https://twitter.com/n3rdh4ck3r" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a target="_blank" href="https://www.linkedin.com/in/elvismdev" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-					<li><a target="_blank" href="https://profiles.wordpress.org/elvismdev" title="WordPress"><i class="fa fa-wordpress" aria-hidden="true"></i></a></li>
-					<li><a target="_blank" href="https://www.drupal.org/u/elvismdev" title="Drupal"><i class="fa fa-drupal" aria-hidden="true"></i></a></li>
-					<li><a target="_blank" href="https://bitbucket.org/elvismdev" title="Bitbucket"><i class="fa fa-bitbucket" aria-hidden="true"></i></a></li>
-					<li><a target="_blank" href="https://github.com/elvismdev" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-					<li><a target="_blank" href="https://stackoverflow.com/story/elvismdev" title="Stack Overflow - Developer Story"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a></li>
-				</ul>
-
-
-				<p>Want to send me a love letter? <a href="mailto:yo@elvismdev.io">Email me</a>.</p>
+				<div class="github-widget" data-href="Repository.html?repo=elvismdev/Intrinio-PHP-Client"></div>
+				<br>
+				<div class="github-widget" data-href="Repository.html?repo=elvismdev/Bitcoin-Simple-Shop"></div>
+				<br>
+				<div class="github-widget" data-href="Repository.html?repo=elvismdev/robinhood-php-lib"></div>
+				<br>
+				<div class="github-widget" data-href="Repository.html?repo=forumone/gesso-wp"></div>
+				<br>
+				<div class="github-widget" data-href="Repository.html?repo=royboy789/wordpress-firebase-chat"></div>
+				<br>
 			</div>
-		</body>
-		</html>
+			<div id="EWA_box"></div>
+
+
+			<ul class="social-icons">
+				<li><a target="_blank" href="https://twitter.com/n3rdh4ck3r" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				<li><a target="_blank" href="https://www.linkedin.com/in/elvismdev" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				<li><a target="_blank" href="https://profiles.wordpress.org/elvismdev" title="WordPress"><i class="fa fa-wordpress" aria-hidden="true"></i></a></li>
+				<li><a target="_blank" href="https://www.drupal.org/u/elvismdev" title="Drupal"><i class="fa fa-drupal" aria-hidden="true"></i></a></li>
+				<li><a target="_blank" href="https://bitbucket.org/elvismdev" title="Bitbucket"><i class="fa fa-bitbucket" aria-hidden="true"></i></a></li>
+				<li><a target="_blank" href="https://github.com/elvismdev" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+				<li><a target="_blank" href="https://stackoverflow.com/story/elvismdev" title="Stack Overflow - Developer Story"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a></li>
+			</ul>
+
+
+			<p>Want to send me a love letter? <a href="mailto:yo@elvismdev.io">Email me</a>.</p>
+		</div>
+
+	</body>
+	</html>
